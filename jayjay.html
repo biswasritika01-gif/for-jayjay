@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday, JayJay 🤍</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background: linear-gradient(180deg, #fafafa, #f3f3f3);
+      color: #2b2b2b;
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-style: italic;
+      color: #777;
+      margin-bottom: 40px;
+    }
+
+    .photo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .photo img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .music {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .music iframe {
+      border-radius: 12px;
+    }
+
+    .letter {
+      font-size: 1.05rem;
+      white-space: pre-wrap;
+      min-height: 300px;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.2em;
+      background-color: #2b2b2b;
+      margin-left: 4px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+
+    .signature {
+      margin-top: 40px;
+      text-align: right;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Happy Birthday, JayJay 🎂🤍</h1>
+    <div class="subtitle">A love letter, written in code</div>
+
+    <div class="photo">
+      <img src="image.jpg" alt="Us 🤍">
+    </div>
+
+    <div class="music">
+      <p><strong>Our Song 🎵</strong></p>
+      <iframe style="border:none"
+        src="https://open.spotify.com/embed/track/1dGr1c8CrMLDpV6mPbImSI?si=8AQgBNbTRTuoInLV_JUMmg"
+        width="300"
+        height="80"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+      </iframe>
+    </div>
+
+    <div class="letter" id="letter"></div><span class="cursor"></span>
+
+    <div class="signature" id="signature">
+      — Always yours
+    </div>
+
+    <footer>
+      Built with 🤍 for you
+    </footer>
+  </div>
+
+  <script>
+    const text = `A paragraph could never do justice to the way I feel about you, but nevertheless, here we go.
+
+I know it hasn’t been long since we’ve known each other, yet somehow it feels like I’ve known you forever.
+
+I probably don’t say this enough, but I’m truly glad I met you (even if we did meet in a slightly unconventional way haha <3).
+
+I still remember the first time I saw you. My heart felt like it was beating out of my chest; something I’ve never experienced before. But the moment you looked up from your phone and smiled at me, a wave of serenity washed over me, as if I was ready to surrender to the tide… to you.
+
+Thank you for calling me every day, even on the days you’re exhausted.
+Thank you for all the cute gifts.
+Thank you for dealing with all my shenanigans.
+Thank you for choosing to love me despite my flaws and imperfections.
+Thank you for treating me with kindness and empathy.
+Thank you for creating a space where I can be my truest self.
+Thank you for being my home.
+
+And last, but never least, thank you for simply being you.
+
+If someone had told me earlier that all the heartbreaks would eventually lead me to you, I would have gone through every one of them again in the blink of an eye.
+
+For the first time in my life, I’ve found someone I’d be truly scared to lose and so I choose to hold on to this feeling, to not let go of you.
+
+I sincerely wish for you to achieve everything you desire in this life. Just know that I’ll always be cheering for you, both in silence and in chaos.
+
+Wishing you the happiest birthday, JayJay.
+I love you. I miss you so much.
+
+And I’m manifesting that the next time, we get to celebrate your birthday together, in person. 🤍`;
+
+    const letterEl = document.getElementById("letter");
+    const signatureEl = document.getElementById("signature");
+
+    let index = 0;
+    const speed = 35; // typing speed in ms
+
+    function typeWriter() {
+      if (index < text.length) {
+        letterEl.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, speed);
+      } else {
+        signatureEl.style.opacity = 1;
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
